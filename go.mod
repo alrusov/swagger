@@ -1,13 +1,13 @@
 module github.com/alrusov/swagger
 
-go 1.26.3
+go 1.27.2
 
 require (
-	github.com/alrusov/config v0.1.69
+	github.com/alrusov/config v0.1.72
 	github.com/alrusov/initializer v0.1.3
-	github.com/alrusov/misc v1.1.35
+	github.com/alrusov/misc v1.1.37
 	github.com/alrusov/stdhttp v0.1.130
-	gopkg.org/swaggerui v1.3.0
+	gopkg.org/swaggerui v1.5.1
 )
 
 require (
@@ -22,6 +22,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/naoina/go-stringutil v0.1.0 // indirect
 	github.com/naoina/toml v0.1.1 // indirect
-	golang.org/x/text v0.35.0 // indirect
-	gopkg.org/generic v1.0.0 // indirect
+	golang.org/x/text v0.38.0 // indirect
+	gopkg.org/header v1.3.0 // indirect
+	gopkg.org/mime v1.1.0 // indirect
 )

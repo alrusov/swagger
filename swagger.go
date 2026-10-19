@@ -31,7 +31,7 @@ func init() {
 
 // Инициализация
 func initModule(appCfg any, h any) (err error) {
-	cfg, err := config.GetBlock[Config](appCfg, "Swagger")
+	cfg, err := config.GetBlock[*Config](appCfg, "Swagger")
 	if err != nil {
 		return
 	}
@@ -46,7 +46,9 @@ func initModule(appCfg any, h any) (err error) {
 		return
 	}
 
-	cfg.h = http.StripPrefix("/swagger", swaggerui.Handler(cfg.OpenAPI))
+	bundle := swaggerui.DefaultBundle
+	bundle.ConfigURL = cfg.OpenAPI
+	cfg.h = http.StripPrefix("/swagger", swaggerui.Handler(bundle))
 	hdl.AddHandler(cfg, false)
 	return
 }

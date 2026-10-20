@@ -47,7 +47,7 @@ func initModule(appCfg any, h any) (err error) {
 	}
 
 	bundle := swaggerui.DefaultBundle
-	bundle.ConfigURL = cfg.OpenAPI
+	bundle.URL = cfg.OpenAPI
 	cfg.h = http.StripPrefix("/swagger", swaggerui.Handler(bundle))
 	hdl.AddHandler(cfg, false)
 	return
